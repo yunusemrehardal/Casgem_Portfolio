@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+    int count = 0;
 }
 
 <h2>Hizmet Listesi</h2>
@@ -16,8 +17,9 @@
     </tr>
     @foreach (var item in Model)
     {
+        count++;
         <tr>
-            <td>@item.ServiceID</td>
+            <td>@count</td>
             <td>@item.ServiceTittle</td>
             <td><a href="/Service/DeleteService/@item.ServiceID" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="/Service/UpdateService/@item.ServiceID" class="btn btn-outline-success">Güncelle</a></td>

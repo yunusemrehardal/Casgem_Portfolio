@@ -1,7 +1,6 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model List<Casgem_Portfolio.Models.Entities.TblProject>
+
+@{ Layout = null; }
 
 <!--
 Author: W3layouts
@@ -10,75 +9,39 @@ Author URL: http://w3layouts.com
 <!doctype html>
 <html lang="en">
 
-@Html.Partial("PartialHead")
+@Html.Action("PartialHead", "Portfolio")
 
 <body>
     <!-- header -->
-    @Html.Partial("PartialNavbar")
+    @Html.Action("PartialNavbar", "Portfolio")
     <!-- //header -->
-    <!-- banner section -->
-    @Html.Action("PartialFeature")
-    <!-- //banner section -->
-    <!-- home page about section -->
-    <!-- //home page about section -->
-    <!-- home page second section -->
-    @Html.Action("MyResume")
-    <!-- //home page second section -->
-    <!-- home page services section -->
-    <!-- //home page services section -->
-    <!-- stats -->
-    @Html.Action("PartialStatistic")
-    <!-- //stats -->
-    <!-- testimonials -->
-    <!-- //testimonials -->
-    <!-- home page video popup section -->
-    <!-- //home page video popup section -->
-    <!-- freelance hire me -->
-    <!-- //freelance hire me -->
-    <!-- Footer -->
-    <section class="w3l-footer py-sm-5 py-4">
+    <!-- contact breadcrumb -->
+
+    <section class="w3l-about-breadcrumb text-center">
+        <br />
         <div class="container">
-            <div class="footer-content">
-                <div class="row">
-                    <div class="col-lg-8 footer-left">
-                        <p class="m-0">Yunus Emre Hardal © Copyright 2023. Design by <a href="https://w3layouts.com">W3layouts</a></p>
-                    </div>
-                    <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
-                        <ul class="social m-0 p-0">
-                            <li><a href="https://github.com/yunusemrehardal"><span class="fa fa-github"></span></a></li>
-                            <li><a href="https://linkedin.com/yunusemrehardal"><span class="fa fa-linkedin-square"></span></a></li>
-                            <li><a href="https://instagram.com/hardalyemre"><span class="fa fa-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- move top -->
-        <button onclick="topFunction()" id="movetop" title="Go to top">
-            <span class="fa fa-angle-up"></span>
-        </button>
-        <script>
-    // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction()
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("movetop").style.display = "block";
-                } else {
-                    document.getElementById("movetop").style.display = "none";
+            <table class="table table-bordered">
+                <tr>
+                    <th>Proje Adı</th>
+                    <th>Proje Açıklaması</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProjectName</td>
+                        <td>@item.ProjectDescription</td>
+                    </tr>
                 }
-            }
-
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }</script>
-        <!-- /move top -->
+            </table>
+        </div>
     </section>
+    <!-- contact breadcrumb -->
+    <!-- contact block -->
+    <!-- contact1 -->
+    <!-- /contact1 -->
+    <!-- //contact block -->
+    <!-- Footer -->
     <!-- //Footer -->
     <!-- all js scripts and files here -->
 
@@ -87,10 +50,10 @@ Author URL: http://w3layouts.com
     <script src="~/Templates/alexander-starter/assets/js/jquery-3.3.1.min.js"></script><!-- default jQuery -->
     <!-- /typig-text-->
     <script>
-    const typedTextSpan = document.querySelector(".typed-text");
+        const typedTextSpan = document.querySelector(".typed-text");
         const cursorSpan = document.querySelector(".cursor");
 
-        const textArray = ["Full-Stack .Net Developer", "Software Developer", "Geomatics Engineer"];
+        const textArray = ["UI/UX Designer", "Freelancer", "Web developer"];
         const typingDelay = 200;
         const erasingDelay = 10;
         const newTextDelay = 100; // Delay between current and next text
@@ -135,7 +98,7 @@ Author URL: http://w3layouts.com
 
     <!-- script for services -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $('.owl-two').owlCarousel({
                 loop: true,
                 margin: 30,
@@ -168,7 +131,7 @@ Author URL: http://w3layouts.com
     <!-- //script for services -->
     <!-- script for tesimonials carousel slider -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $("#owl-demo1").owlCarousel({
                 loop: true,
                 margin: 20,
@@ -195,7 +158,7 @@ Author URL: http://w3layouts.com
     <!-- video popup -->
     <script src="~/Templates/alexander-starter/assets/js/jquery.magnific-popup.min.js"></script>
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $('.popup-with-zoom-anim').magnificPopup({
                 type: 'inline',
 
@@ -236,7 +199,7 @@ Author URL: http://w3layouts.com
     <!-- //stats number counter -->
     <!-- disable body scroll which navbar is in active -->
     <script>
-    $(function () {
+        $(function () {
             $('.navbar-toggler').click(function () {
                 $('body').toggleClass('noscroll');
             })
@@ -244,7 +207,7 @@ Author URL: http://w3layouts.com
     <!-- disable body scroll which navbar is in active -->
     <!--/MENU-JS-->
     <script>
-    $(window).on("scroll", function () {
+        $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
             if (scroll >= 80) {

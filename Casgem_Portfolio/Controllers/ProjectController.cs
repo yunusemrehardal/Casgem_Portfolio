@@ -15,6 +15,11 @@ namespace Casgem_Portfolio.Controllers
             var values = db.TblProject.ToList();
             return View(values);
         }
+        public ActionResult ListProject()
+        {
+            var values = db.TblProject.ToList();
+            return View(values);
+        }
         [HttpGet]
         public ActionResult AddProject()
         {
