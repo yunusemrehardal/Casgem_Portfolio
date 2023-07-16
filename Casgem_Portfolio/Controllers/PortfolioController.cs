@@ -49,5 +49,12 @@ namespace Casgem_Portfolio.Controllers
             string fileName = "CV_EN_HARDAL.pdf";
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
+        public PartialViewResult PartialVideo()
+        {
+            ViewBag.title = db.TblVideo.Select(x => x.Title).FirstOrDefault();
+            ViewBag.description = db.TblVideo.Select(x => x.Description).FirstOrDefault();
+            ViewBag.video = db.TblVideo.Select(x => x.VideoFrame).FirstOrDefault();
+            return PartialView();
+        }
     }
 }

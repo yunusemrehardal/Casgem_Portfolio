@@ -21,5 +21,11 @@ namespace Casgem_Portfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("Index","Portfolio");
         }
+        [HttpGet]
+        public ActionResult Get()
+        {
+            var values = db.TblContact.ToList();
+            return View(values);
+        }
     }
 }

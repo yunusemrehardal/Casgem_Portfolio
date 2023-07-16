@@ -15,16 +15,16 @@ namespace Casgem_Portfolio.Models.Entities
 using System;
     using System.Collections.Generic;
     
-public partial class TblResume
+public partial class TblContact
 {
 
-    public int ResumeID { get; set; }
+    public int ContactID { get; set; }
 
-    public string Title1 { get; set; }
+    public string NameSurname { get; set; }
 
-    public string Title2 { get; set; }
+    public string Email { get; set; }
 
-    public string Description { get; set; }
+    public string Telephone { get; set; }
 
 }
 

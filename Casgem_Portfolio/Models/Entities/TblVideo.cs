@@ -15,16 +15,16 @@ namespace Casgem_Portfolio.Models.Entities
 using System;
     using System.Collections.Generic;
     
-public partial class TblResume
+public partial class TblVideo
 {
 
-    public int ResumeID { get; set; }
+    public int VideoID { get; set; }
 
-    public string Title1 { get; set; }
-
-    public string Title2 { get; set; }
+    public string Title { get; set; }
 
     public string Description { get; set; }
+
+    public string VideoFrame { get; set; }
 
 }
 
